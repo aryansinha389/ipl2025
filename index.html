@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL - Indian Premier League 2025, IPL 2025, IPL 20, IPL Matches, IPL Match, Cricket, 2025 Cricket Matches</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ipl-blue: #2c105a;
+            --ipl-purple: #6a3093;
+            --ipl-pink: #a044ff;
+            --text-light: #ffffff;
+            --text-gray: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding-top: 80px; /* Space for fixed navbar */
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--ipl-blue), var(--ipl-purple));
+            color: var(--text-light);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            order: 1;
+        }
+        
+        .logo-container img {
+            height: 42px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            order: 3;
+            width: 100%;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--ipl-pink);
+        }
+        
+        .nav-links .more {
+            position: relative;
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--ipl-blue);
+            width: 200px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 100;
+            padding: 10px 0;
+            border-top: 2px solid var(--ipl-pink);
+        }
+        
+        .more:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown li {
+            padding: 8px 15px;
+        }
+        
+        .dropdown li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .dropdown a {
+            text-transform: capitalize;
+        }
+        
+        .search-bar {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            order: 4;
+            margin: 1rem 0;
+            position: relative;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem 1rem 0.5rem 35px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+        
+        .search-bar input::placeholder {
+            color: var(--text-gray);
+        }
+        
+        .search-bar input:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-gray);
+        }
+        
+        .right-section {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            order: 2;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-icons a:hover {
+            color: var(--ipl-pink);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .profile-icon {
+            margin-left: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .profile-icon img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--ipl-pink);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            color: var(--text-light);
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .right-section {
+                margin-left: auto;
+            }
+            
+            .social-icons {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: linear-gradient(135deg, var(--ipl-blue), var(--ipl-purple));
+                padding: 1rem 2rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                margin-top: 0;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .dropdown {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+                padding-left: 1rem;
+                border-top: none;
+                border-left: 2px solid var(--ipl-pink);
+                margin-top: 0.5rem;
+                background: rgba(0, 0, 0, 0.2);
+            }
+            
+            .more.active .dropdown {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .search-bar {
+                order: 3;
+                margin: 0.5rem 0;
+                display: block;
+            }
+            
+            .profile-icon {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" alt="IPL Logo">
+        </div>
+        
+        <div class="right-section">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/IPL/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/iplt20/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/IPL" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.pinterest.com/IPL/" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            <div class="profile-icon">
+                <img src="https://www.iplt20.com/assets/images/default-headshot.png" alt="Profile">
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#"><i class="fas fa-cricket"></i> Matches</a></li>
+            <li><a href="#"><i class="fas fa-list-ol"></i> Points Table</a></li>
+            <li><a href="#"><i class="fas fa-tshirt"></i> Teams</a></li>
+            <li><a href="#"><i class="fas fa-newspaper"></i> News</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Fantasy</a></li>
+            <li><a href="#"><i class="fas fa-chart-pie"></i> Stats</a></li>
+            <li class="more">
+                <a href="#"><i class="fas fa-ellipsis-h"></i> More <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#"><i class="fas fa-video"></i> Videos</a></li>
+                    <li><a href="#"><i class="fas fa-camera"></i> Photos</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a href="#"><i class="fas fa-trophy"></i> Results</a></li>
+                    <li><a href="#"><i class="fas fa-archive"></i> Archives</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <div class="search-bar">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search players, teams, matches...">
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page content would go here -->
+        <div style="height: 100px; padding: 20px; margin-top: 2rem;">
+            <h1>IPL Content Goes Here</h1>
+            <p>Scroll down to see the sticky navbar in action</p>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const moreLink = document.querySelector('.more');
+        
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            // Toggle hamburger icon between bars and X
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // For the more dropdown on mobile
+        document.addEventListener('click', (e) => {
+            // Close main menu when clicking anywhere except the menu itself
+            if (!e.target.closest('.nav-links') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                moreLink.classList.remove('active');
+                // Reset hamburger icon
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+            
+            // Handle more dropdown
+            if (window.innerWidth <= 768) {
+                if (e.target.closest('.more > a')) {
+                    e.preventDefault();
+                    moreLink.classList.toggle('active');
+                } else if (!e.target.closest('.more')) {
+                    moreLink.classList.remove('active');
+                }
+            }
+        });
+        
+        // Prevent dropdown from closing when clicking inside
+        navLinks.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        // Close dropdown when clicking on a dropdown item
+        document.querySelectorAll('.dropdown a').forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    moreLink.classList.remove('active');
+                    // Reset hamburger icon
+                    const icon = hamburger.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2025 - Matches & Stats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ipl-purple: #2c105a;
+            --ipl-pink: #a044ff;
+            --ipl-gold: #f9a825;
+            --text-light: #ffffff;
+            --text-gray: #e0e0e0;
+            --card-bg: rgba(44, 16, 90, 0.7);
+            --live-red: #ff3e3e;
+            --green: #4CAF50;
+            --yellow: #FFC107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #0f051d;
+            color: var(--text-light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(to right, var(--ipl-gold), var(--ipl-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+            color: var(--text-light);
+        }
+        
+        .tab.active {
+            background: var(--ipl-pink);
+            color: white;
+            border-color: var(--ipl-gold);
+        }
+        
+        .tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .matches-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .match-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        .match-card.live {
+            border-color: var(--live-red);
+            box-shadow: 0 0 15px rgba(255, 62, 62, 0.3);
+        }
+        
+        .match-card.completed {
+            opacity: 0.9;
+        }
+        
+        .match-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(160, 68, 255, 0.3);
+        }
+        
+        .match-status {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .status-live {
+            background: rgba(255, 62, 62, 0.2);
+            color: var(--live-red);
+        }
+        
+        .status-completed {
+            background: rgba(76, 175, 80, 0.1);
+            color: var(--green);
+        }
+        
+        .status-upcoming {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--yellow);
+        }
+        
+        .match-date {
+            padding: 0.75rem 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .match-date i {
+            color: var(--ipl-gold);
+        }
+        
+        .match-teams {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .team-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        .team-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .match-score {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 0.3rem;
+            padding-left: 60px;
+        }
+        
+        .match-info {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .match-venue {
+            color: var(--text-gray);
+        }
+        
+        .match-time {
+            font-weight: 600;
+            color: var(--ipl-gold);
+        }
+        
+        .match-result {
+            color: var(--ipl-pink);
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        
+        .points-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .points-table th, .points-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .points-table th {
+            background: rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+            color: var(--ipl-gold);
+        }
+        
+        .points-table tr:hover {
+            background: rgba(160, 68, 255, 0.1);
+        }
+        
+        .team-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .team-cell img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .highlight {
+            color: var(--ipl-gold);
+            font-weight: 600;
+        }
+        
+        .playoffs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .playoff-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .playoff-card h3 {
+            color: var(--ipl-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .playoff-match {
+            margin-bottom: 1.5rem;
+        }
+        
+        .playoff-teams {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .playoff-info {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 0.5rem;
+        }
+        
+        .live-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--live-red);
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .matches-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .points-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .tabs {
+                gap: 0.5rem;
+            }
+            
+            .tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>IPL 2025 Season</h1>
+            <p>Follow all the action from the biggest cricket league in the world</p>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="fixtures">Fixtures</div>
+            <div class="tab" data-tab="results">Results</div>
+            <div class="tab" data-tab="points-table">Points Table</div>
+            <div class="tab" data-tab="playoffs">Playoffs</div>
+        </div>
+        
+        <!-- Fixtures Tab -->
+        <div id="fixtures" class="tab-content active">
+            <div class="matches-container">
+                <!-- Match 1 -->
+                <div class="match-card upcoming">
+                    <div class="match-status status-upcoming">
+                        <i class="far fa-clock"></i> Upcoming
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        March, 31 Sun, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\dc.png" alt="DC" class="team-logo">
+                            <span class="team-name">Delhi Capitals</span>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\srh.png" alt="SRH" class="team-logo">
+                            <span class="team-name">Sunrisers Hyderabad</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">Dr YS Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnams</span>
+                        <span class="match-time">3:30 PM IST</span>
+                    </div>
+                </div>
+                
+                <!-- Match 2 -->
+                <div class="match-card upcoming">
+                    <div class="match-status status-upcoming">
+                        <i class="far fa-clock"></i> Upcoming
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        March, 31 Sun, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\rr.png" alt="RR" class="team-logo">
+                            <span class="team-name">Rajasthan Royals</span>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\csk.png" alt="CSK" class="team-logo">
+                            <span class="team-name">Chennai Super Kings</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">ACA Stadium, Guwahati</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+                
+                <!-- Match 3 - Live Match -->
+                <div class="match-card live">
+                    <div class="match-status status-live">
+                        <i class="far fa-clock"></i> Live
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        March, 31 Mon, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\mi.png" alt="MI" class="team-logo">
+                            <span class="team-name">Mumbai Indians</span>
+                            <!-- <div class="match-score">152/6 (18.3 overs)</div> -->
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\kkr.png" alt="KKR" class="team-logo">
+                            <span class="team-name">Kolkata Knight Riders</span>
+                            <!-- <div class="match-score">178/4 (20 overs)</div> -->
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">Wankhede Stadium, Mumbai</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                    <!-- <div class="match-result">DC need 27 runs from 9 balls</div> -->
+                </div>
+                
+                <!-- Match 4 -->
+                <div class="match-card">
+                    <div class="match-status status-upcoming">
+                        <i class="far fa-clock"></i> Upcoming
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        April, 1 Tus, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\lsg.png" alt="LSG" class="team-logo">
+                            <span class="team-name">Lucknow Super Giants</span>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\pbks.png" alt="PBKS" class="team-logo">
+                            <span class="team-name">Punjab Kings</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+                
+                <!-- Match 5 -->
+                <div class="match-card">
+                    <div class="match-status status-upcoming">
+                        <i class="far fa-clock"></i> Upcoming
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        April, 2 Wed, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\rcb.png" alt="RCB" class="team-logo">
+                            <span class="team-name">Royal Challengers Bengaluru</span>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\gt.png" alt="GT" class="team-logo">
+                            <span class="team-name">Gujarat Titans</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">M Chinnaswamy Stadium, Bengaluru</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+<!-- Match 6 -->
+                <div class="match-card">
+                    <div class="match-status status-upcoming">
+                        <i class="far fa-clock"></i> Upcoming
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        April, 4 Fri, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\lsg.png" alt="LSG" class="team-logo">
+                            <span class="team-name">Lucknow Super Giants</span>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\mi.png" alt="MI" class="team-logo">
+                            <span class="team-name">Mumbai Indians</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+<!-- Match 7 -->
+                <div class="match-card">
+                    <div class="match-status status-upcoming">
+                        <i class="far fa-clock"></i> Upcoming
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        April, 5 Sat, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\csk.png" alt="CSK" class="team-logo">
+                            <span class="team-name">Chennai Super Kings</span>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\dc.png" alt="DC" class="team-logo">
+                            <span class="team-name">Delhi Captials</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">MA Chidambaram Stadium, Chennai</span>
+                        <span class="match-time">3:30 PM IST</span>
+                    </div>
+                </div>
+<!-- Match 8 -->
+                <div class="match-card">
+                    <div class="match-status status-upcoming">
+                        <i class="far fa-clock"></i> Upcoming
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        April, 5 Sat, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\pbks.png" alt="PBKS" class="team-logo">
+                            <span class="team-name">Punjab Kings</span>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\rr.png" alt="RR" class="team-logo">
+                            <span class="team-name">Rajasthan Royals</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">New PCA Stadium, New Chandigarh</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+<!-- Match 9 -->
+                <div class="match-card">
+                    <div class="match-status status-upcoming">
+                        <i class="far fa-clock"></i> Upcoming
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        April, 6 Sun, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\srh.png" alt="SRH" class="team-logo">
+                            <span class="team-name">Sunrisers Hyderabad</span>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\gt.png" alt="GT" class="team-logo">
+                            <span class="team-name">Gujarat Titans</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span class="match-venue">Rajiv Gandhi International Stadium, Hyderabad</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+            </div>
+
+    <div meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA IPL 2025 Teams</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ipl-purple: #2c105a;
+            --ipl-pink: #a044ff;
+            --ipl-gold: #f9a825;
+            --text-light: #ffffff;
+            --text-gray: #e0e0e0;
+            --card-bg: rgba(44, 16, 90, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #0f051d;
+            color: var(--text-light);
+            padding: 2rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            margin-top: 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(to right, var(--ipl-gold), var(--ipl-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .team-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(160, 68, 255, 0.3);
+            border-color: var(--ipl-pink);
+        }
+        
+        .team-logo-container {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .team-logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s;
+        }
+        
+        .team-card:hover .team-logo {
+            transform: scale(1.05);
+        }
+        
+        .team-info {
+            padding: 1.5rem 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .team-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-captain {
+            color: var(--ipl-gold);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-titles {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+        
+        .team-titles i {
+            color: var(--ipl-gold);
+            margin-right: 0.3rem;
+        }
+        
+        .view-more {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .view-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--ipl-pink);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid var(--ipl-pink);
+        }
+        
+        .view-more-btn:hover {
+            background: transparent;
+            color: var(--ipl-pink);
+        }
+        
+        @media (max-width: 768px) {
+            .teams-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 1rem;
+            }
+            
+            .team-logo-container {
+                height: 140px;
+                padding: 1rem;
+            }
+            
+            .team-info {
+                padding: 1rem 0.5rem;
+            }
+            
+            .team-name {
+                font-size: 1rem;
+            }
+            
+            .team-captain {
+                font-size: 0.8rem;
+            }
+            
+            .team-titles {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-header">
+            <h2>TATA IPL 2025 Teams</h2>
+            <p>Meet the 10 franchises competing for glory in the Indian Premier League 2025 season</p>
+        </div>
+        
+        <div class="teams-grid">
+            <!-- Chennai Super Kings -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(255,204,0,0.1) 0%, rgba(0,91,187,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\CSKoutline.avif" alt="CSK" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Chennai Super Kings</div>
+                    <div class="team-captain">Captain: MS Dhoni</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> 5 Titles (2023, 2021, 2018, 2011, 2010)</div>
+                </div>
+            </div>
+            
+            <!-- Mumbai Indians -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(0,83,155,0.1) 0%, rgba(0,173,239,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\MIoutline.avif" alt="MI" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Mumbai Indians</div>
+                    <div class="team-captain">Captain: Hardik Pandya</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> 5 Titles (2020, 2019, 2017, 2015, 2013)</div>
+                </div>
+            </div>
+            
+            <!-- Kolkata Knight Riders -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(58,12,110,0.1) 0%, rgba(114,0,161,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\KKRoutline.avif" alt="KKR" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Kolkata Knight Riders</div>
+                    <div class="team-captain">Captain: Shreyas Iyer</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> 3 Titles (2024, 2014, 2012)</div>
+                </div>
+            </div>
+            
+            <!-- Gujarat Titans -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(0,174,239,0.1) 0%, rgba(0,91,187,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\GToutline.avif" alt="GT" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Gujarat Titans</div>
+                    <div class="team-captain">Captain: Shubman Gill</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> 1 Title (2022)</div>
+                </div>
+            </div>
+            
+            <!-- Rajasthan Royals -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(0,81,135,0.1) 0%, rgba(0,174,239,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\RRoutline.avif" alt="RR" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Rajasthan Royals</div>
+                    <div class="team-captain">Captain: Sanju Samson</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> 1 Title (2008)</div>
+                </div>
+            </div>
+            
+            <!-- Sunrisers Hyderabad -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(252,100,27,0.1) 0%, rgba(255,180,0,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\SRHoutline.avif" alt="SRH" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Sunrisers Hyderabad</div>
+                    <div class="team-captain">Captain: Pat Cummins</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> 1 Title (2016)</div>
+                </div>
+            </div>
+            
+            <!-- Royal Challengers Bangalore -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(217,0,27,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\RCBoutline.avif" alt="RCB" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Royal Challengers</div>
+                    <div class="team-captain">Captain: Faf du Plessis</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> Yet to win</div>
+                </div>
+            </div>
+            
+            <!-- Delhi Capitals -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(0,87,184,0.1) 0%, rgba(0,174,239,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\DCoutline.avif" alt="DC" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Delhi Capitals</div>
+                    <div class="team-captain">Captain: Rishabh Pant</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> Yet to win</div>
+                </div>
+            </div>
+            
+            <!-- Punjab Kings -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(237,27,46,0.1) 0%, rgba(237,27,46,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\PBKSoutline.avif" alt="PBKS" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Punjab Kings</div>
+                    <div class="team-captain">Captain: Shikhar Dhawan</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> Yet to win</div>
+                </div>
+            </div>
+            
+            <!-- Lucknow Super Giants -->
+            <div class="team-card">
+                <div class="team-logo-container" style="background: linear-gradient(135deg, rgba(0,91,187,0.1) 0%, rgba(0,174,239,0.1) 100%);">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\LSGoutline.avif" alt="LSG" class="team-logo">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Lucknow Super Giants</div>
+                    <div class="team-captain">Captain: KL Rahul</div>
+                    <div class="team-titles"><i class="fas fa-trophy"></i> Yet to win</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-more">
+            <a href="#" class="view-more-btn">
+                View All Team Details
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        </div>
+        </div>
+        
+    <div meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL News Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ipl-purple: #2c105a;
+            --ipl-pink: #a044ff;
+            --ipl-gold: #f9a825;
+            --text-light: #ffffff;
+            --text-gray: #e0e0e0;
+            --card-bg: rgba(44, 16, 90, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #0f051d;
+            color: var(--text-light);
+            padding: 2rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(to right, var(--ipl-gold), var(--ipl-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 2rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .news-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .news-tab {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+            color: var(--text-light);
+        }
+        
+        .news-tab.active {
+            background: var(--ipl-pink);
+            color: white;
+            border-color: var(--ipl-gold);
+        }
+        
+        .news-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            display: none; /* Initially hidden */
+        }
+        
+        .news-card.active {
+            display: block; /* Show active cards */
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(160, 68, 255, 0.3);
+            border-color: var(--ipl-pink);
+        }
+        
+        .news-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+        
+        .news-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+        }
+        
+        .news-date {
+            color: var(--ipl-gold);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .news-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .news-excerpt {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--ipl-pink);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .read-more:hover {
+            color: var(--ipl-gold);
+        }
+        
+        .view-all {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .view-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--ipl-pink);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid var(--ipl-pink);
+        }
+        
+        .view-all-btn:hover {
+            background: transparent;
+            color: var(--ipl-pink);
+        }
+        
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 1rem;
+            }
+            
+            .news-image {
+                height: 150px;
+            }
+            
+            .news-content {
+                padding: 1rem;
+            }
+            
+            .news-tabs {
+                gap: 0.5rem;
+            }
+            
+            .news-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured News Categories</h2>
+            <p>Stay updated with the latest happenings from the world of IPL</p>
+        </div>
+        
+        <div class="news-tabs">
+            <div class="news-tab active" data-category="all">All News</div>
+            <div class="news-tab" data-category="latest">Latest News</div>
+            <div class="news-tab" data-category="announcement">Announcements</div>
+            <div class="news-tab" data-category="report">Match Reports</div>
+        </div>
+        
+        <div class="news-grid">
+            <!-- News 1 - Latest News -->
+            <div class="news-card active" data-categories="latest">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\1739686629_IPL _ Thumbnail.avif" alt="IPL 2025 Schedule">
+                    <div class="news-category">Latest News</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> May 15, 2025</div>
+                    <h3 class="news-title">IPL 2025 Schedule Announced: Tournament to Begin March 22</h3>
+                    <p class="news-excerpt">The BCCI has unveiled the complete schedule for IPL 2025 with 10 teams competing across 12 venues.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News 2 - Announcement -->
+            <div class="news-card active" data-categories="announcement">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\1739686629_IPL _ Thumbnail.avif" alt="New Sponsorship">
+                    <div class="news-category">Announcement</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> May 10, 2025</div>
+                    <h3 class="news-title">TATA Extends IPL Title Sponsorship Until 2028</h3>
+                    <p class="news-excerpt">TATA Group has renewed its partnership with the IPL as title sponsor in a record-breaking deal.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News 3 - Match Report -->
+            <div class="news-card active" data-categories="report">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\1742819619_POP_7388__1_.avif" alt="MI vs CSK">
+                    <div class="news-category">Match Report</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> May 8, 2025</div>
+                    <h3 class="news-title">MI Edge Past CSK in Last-Ball Thriller at Wankhede</h3>
+                    <p class="news-excerpt">Rohit Sharma's brilliant 89* helps Mumbai Indians chase down 198 against arch-rivals CSK.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News 4 - Latest News -->
+            <div class="news-card active" data-categories="latest">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\auction.avif" alt="Player Auction">
+                    <div class="news-category">Latest News</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> May 5, 2025</div>
+                    <h3 class="news-title">IPL 2025 Player Auction List Revealed: 500 Players Registered</h3>
+                    <p class="news-excerpt">The complete list of players for the IPL 2025 auction has been released with several big names.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News 5 - Announcement -->
+            <div class="news-card active" data-categories="announcement">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\1739686629_IPL _ Thumbnail.avif" alt="New Rules">
+                    <div class="news-category">Announcement</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> May 3, 2025</div>
+                    <h3 class="news-title">IPL 2025 Introduces New Rules: Impact Player Stays, Two Bouncers Allowed</h3>
+                    <p class="news-excerpt">The IPL Governing Council has approved several rule changes for the 2025 season.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News 6 - Match Report -->
+            <div class="news-card active" data-categories="report">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\kkr.avif" alt="RCB vs KKR">
+                    <div class="news-category">Match Report</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> May 1, 2025</div>
+                    <h3 class="news-title">KKR Crush RCB by 8 Wickets as Narine Stars With All-Round Show</h3>
+                    <p class="news-excerpt">Sunil Narine's 65 and 3/25 helped KKR dominate RCB at Eden Gardens.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News 7 - Latest News -->
+            <div class="news-card active" data-categories="latest">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\1743184820_SPCS4599.avif" alt="Player Interview">
+                    <div class="news-category">Latest News</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> April 28, 2025</div>
+                    <h3 class="news-title">Exclusive: Virat Kohli Talks About His IPL 2025 Comeback</h3>
+                    <p class="news-excerpt">In an exclusive interview, Kohli shares his thoughts on returning to top form this season.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News 8 - Announcement -->
+            <div class="news-card active" data-categories="announcement">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\1743175302_Eden_Gardens_view_3.avif" alt="New Stadium">
+                    <div class="news-category">Announcement</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> April 25, 2025</div>
+                    <h3 class="news-title">Pune's New Cricket Stadium to Host IPL Matches From 2025</h3>
+                    <p class="news-excerpt">The state-of-the-art facility with 55,000 capacity has been added as a new IPL venue.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- News 9 - Announcement -->
+            <div class="news-card active" data-categories="report">
+                <div class="news-image">
+                    <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\dc vs srh.avif" alt="New Stadium">
+                    <div class="news-category">Latest News</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> March 30, 2025</div>
+                    <h3 class="news-title">TATA IPL 2025 Match 10 , DC vs SRH - Match Report</h3>
+                    <p class="news-excerpt">The state-of-the-art facility with 75,000 capacity has been added as a new IPL venue.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>        
+        <div class="view-all">
+            <a href="#" class="view-all-btn">
+                View All News
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ipl-primary: #2c105a;
+            --ipl-secondary: #a044ff;
+            --ipl-accent: #f9a825;
+            --ipl-light: #ffffff;
+            --ipl-dark: #0f051d;
+            --ipl-text: #e0e0e0;
+            --ipl-card-bg: rgba(44, 16, 90, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--ipl-dark);
+            color: var(--ipl-text);
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background-color: var(--ipl-primary);
+            color: var(--ipl-light);
+            padding: 40px 0 20px;
+            font-size: 14px;
+            margin-top: 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+        
+        .footer-column h3 {
+            color: var(--ipl-accent);
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--ipl-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--ipl-accent);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            color: var(--ipl-light);
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .footer-social a:hover {
+            color: var(--ipl-accent);
+        }
+        
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+        }
+        
+        .footer-copyright {
+            color: var(--ipl-text);
+            margin: 15px 0;
+        }
+        
+        .footer-legal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .footer-legal a {
+            color: var(--ipl-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-legal a:hover {
+            color: var(--ipl-accent);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+            }
+            
+            .footer-column {
+                min-width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-legal {
+                justify-content: center;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Venues</a></li>
+                        <li><a href="#">Tickets</a></li>
+                        <li><a href="#">Stats</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">Photos</a></li>
+                    </ul>
+                </div>
+                
+                <!-- IPL Info Column -->
+                <div class="footer-column">
+                    <h3>IPL Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About IPL</a></li>
+                        <li><a href="#">Anti Corruption Policy</a></li>
+                        <li><a href="#">Anti Doping Policy</a></li>
+                        <li><a href="#">Anti Racism Policy</a></li>
+                        <li><a href="#">Clothing Regulations</a></li>
+                        <li><a href="#">Code of Conduct</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Teams Column -->
+                <div class="footer-column">
+                    <h3>Teams</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Chennai Super Kings</a></li>
+                        <li><a href="#">Delhi Capitals</a></li>
+                        <li><a href="#">Gujarat Titans</a></li>
+                        <li><a href="#">Kolkata Knight Riders</a></li>
+                        <li><a href="#">Lucknow Super Giants</a></li>
+                        <li><a href="#">Mumbai Indians</a></li>
+                        <li><a href="#">Punjab Kings</a></li>
+                        <li><a href="#">Rajasthan Royals</a></li>
+                        <li><a href="#">Royal Challengers Bangalore</a></li>
+                        <li><a href="#">Sunrisers Hyderabad</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Column -->
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                    
+                    <div class="footer-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" alt="IPL Logo">
+                </div>
+                
+                <div class="footer-copyright">
+                    &copy; 2025 Indian Premier League. All Rights Reserved.
+                </div>
+                
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.news-tab');
+            const newsCards = document.querySelectorAll('.news-card');
+            
+            // Function to filter news cards
+            function filterNews(category) {
+                newsCards.forEach(card => {
+                    if (category === 'all') {
+                        card.classList.add('active');
+                    } else {
+                        const cardCategories = card.getAttribute('data-categories').split(' ');
+                        if (cardCategories.includes(category)) {
+                            card.classList.add('active');
+                        } else {
+                            card.classList.remove('active');
+                        }
+                    }
+                });
+            }
+            
+            // Tab click event
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Filter news cards
+                    const category = this.getAttribute('data-category');
+                    filterNews(category);
+                });
+            });
+            
+            // Initialize with all news showing
+            filterNews('all');
+        });
+    </script>
+</body>
+
+
+    </div>
+</body>
+        </div>
+        <!-- Results Tab -->
+        <div id="results" class="tab-content">
+            <div class="matches-container">
+                <!-- Match 1 -->
+                <div class="match-card completed">
+                    <div class="match-status status-completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        March 21, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\gt.png" alt="GT" class="team-logo">
+                            <span class="team-name">Gujarat Titans</span>
+                            <div class="match-score">168/7 (20 overs)</div>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\csk.png" alt="CSK" class="team-logo">
+                            <span class="team-name">Chennai Super Kings</span>
+                            <div class="match-score">172/5 (19.2 overs)</div>
+                        </div>
+                    </div>
+                    <div class="match-result">CSK won by 5 wickets</div>
+                    <div class="match-info">
+                        <span class="match-venue">Narendra Modi Stadium, Ahmedabad</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+                
+                <!-- Match 2 -->
+                <div class="match-card completed">
+                    <div class="match-status status-completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        March 20, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\kkr.png" alt="KKR" class="team-logo">
+                            <span class="team-name">Kolkata Knight Riders</span>
+                            <div class="match-score">185/6 (20 overs)</div>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\srh.png" alt="SRH" class="team-logo">
+                            <span class="team-name">Sunrisers Hyderabad</span>
+                            <div class="match-score">189/4 (18.3 overs)</div>
+                        </div>
+                    </div>
+                    <div class="match-result">SRH won by 6 wickets</div>
+                    <div class="match-info">
+                        <span class="match-venue">Eden Gardens, Kolkata</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+                
+                <!-- Match 3 -->
+                <div class="match-card completed">
+                    <div class="match-status status-completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </div>
+                    <div class="match-date">
+                        <i class="far fa-calendar-alt"></i>
+                        March 19, 2025
+                    </div>
+                    <div class="match-teams">
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\pbks.png" alt="PBKS" class="team-logo">
+                            <span class="team-name">Punjab Kings</span>
+                            <div class="match-score">205/8 (20 overs)</div>
+                        </div>
+                        <div class="team">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\rcb.png" alt="RCB" class="team-logo">
+                            <span class="team-name">Royal Challengers Bangalore</span>
+                            <div class="match-score">208/5 (19.2 overs)</div>
+                        </div>
+                    </div>
+                    <div class="match-result">RCB won by 5 wickets</div>
+                    <div class="match-info">
+                        <span class="match-venue">PCA Stadium, Mohali</span>
+                        <span class="match-time">7:30 PM IST</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Points Table Tab -->
+        <div id="points-table" class="tab-content">
+            <table class="points-table">
+                <thead>
+                    <tr>
+                        <th>POS</th>
+                        <th>TEAM</th>
+                        <th>P</th>
+                        <th>W</th>
+                        <th>L</th>
+                        <th>NR</th>
+                        <th>NRR</th>
+                        <th>For</th>
+                        <th>AGAINST</th>
+                        <th>PTS</th>
+                        <th>RECENT FORM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\rcb.png" alt="SRH">
+                            <span>RCB</span>
+                        </td>
+                        <td>2</td>
+                        <td class="highlight">2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>2.266</td>
+                        <td class="highlight">373/36.2</td>
+                        <td class="highlight">320/40.0</td>
+                        <td>4</td>
+                        <td class="highlight">W,W</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\lsg.png" alt="LSG">
+                            <span>LSG</span>
+                        </td>
+                        <td>2</td>
+                        <td class="highlight">1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0.963</td>  
+                        <td class="highlight">402/36.1</td>
+                        <td class="highlight">401/39.3</td>
+                        <td>2</td>
+                        <td class="highlight">W,L</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\gt.png" alt="GT">
+                            <span>GT</span>
+                        </td>
+                        <td>2</td>
+                        <td class="highlight">1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0.625</td>
+                        <td class="highlight">428/40.0</td>
+                        <td class="highlight">403/40.0</td>
+                        <td>2</td>
+                        <td class="highlight">W,L</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\pbks.png" alt="PBKS">
+                            <span>PBKS</span>
+                        </td>
+                        <td>1</td>
+                        <td class="highlight">1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.550</td>
+                        <td class="highlight">243/20.0</td>
+                        <td class="highlight">232/20.0</td>
+                        <td>2</td>
+                        <td class="highlight">W</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\dc.png" alt="DC">
+                            <span>DC</span>
+                        </td>
+                        <td>1</td>
+                        <td class="highlight">1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.371</td>
+                        <td class="highlight">211/19.3</td>
+                        <td class="highlight">209/20.0</td>
+                        <td>2</td>
+                        <td class="highlight">W</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\srh.png" alt="SRH">
+                            <span>SRH</span>
+                        </td>
+                        <td>2</td>
+                        <td class="highlight">1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>-0.128</td>
+                        <td class="highlight">476/40.0</td>
+                        <td class="highlight">435/36.1</td>
+                        <td>2</td>
+                        <td class="highlight">L,W</td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\kkr.png" alt="kkr">
+                            <span>KKR</span>
+                        </td>
+                        <td>2</td>
+                        <td class="highlight">1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>-0.308</td>
+                        <td class="highlight">327/37.3</td>
+                        <td class="highlight">328/36.2</td>
+                        <td>2</td>
+                        <td class="highlight">W,L</td>
+                    </tr>
+                        <tr>
+                        <td>8</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\csk.png" alt="CSK">
+                            <span>CSK</span>
+                        </td>
+                        <td>2</td>
+                        <td class="highlight">1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>-1.013</td>
+                        <td class="highlight">304/39.1</td>
+                        <td class="highlight">351/40.0</td>
+                        <td>2</td>
+                        <td class="highlight">L,W</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\mi.png" alt="MI">
+                            <span>MI</span>
+                        </td>
+                        <td>2</td>
+                        <td class="highlight">0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>-1.163</td>
+                        <td class="highlight">315/40.0</td>
+                        <td class="highlight">354/39.1</td>
+                        <td>0</td>
+                        <td class="highlight">L,L</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td class="team-cell">
+                            <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\rr.png" alt="RR">
+                            <span>RR</span>
+                        </td>
+                        <td>2</td>
+                        <td class="highlight">0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>-1.882</td>
+                        <td class="highlight">393/40.0</td>
+                        <td class="highlight">439/37.3</td>
+                        <td>0</td>
+                        <td class="highlight">L,L</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Playoffs Tab -->
+        <div id="playoffs" class="tab-content">
+            <div class="playoffs-container">
+                <!-- Qualifier 1 -->
+                <div class="playoff-card">
+                    <h3>Qualifier 1</h3>
+                    <div class="playoff-match">
+                        <div class="playoff-teams">
+                            <div class="team">
+                                <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\srh.png" alt="SRH" class="team-logo">
+                                <span class="team-name">Sunrisers Hyderabad</span>
+                            </div>
+                            <div class="team">
+                                <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\csk.png" alt="CSK" class="team-logo">
+                                <span class="team-name">Chennai Super Kings</span>
+                            </div>
+                        </div>
+                        <div class="playoff-info">
+                            <p><i class="far fa-calendar-alt"></i> May 21, 2025</p>
+                            <p><i class="far fa-clock"></i> 7:30 PM IST</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Narendra Modi Stadium, Ahmedabad</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Eliminator -->
+                <div class="playoff-card">
+                    <h3>Eliminator</h3>
+                    <div class="playoff-match">
+                        <div class="playoff-teams">
+                            <div class="team">
+                                <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\rcb.png" alt="RCB" class="team-logo">
+                                <span class="team-name">Royal Challengers Bangalore</span>
+                            </div>
+                            <div class="team">
+                                <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\kkr.png" alt="KKR" class="team-logo">
+                                <span class="team-name">Kolkata Knight Riders</span>
+                            </div>
+                        </div>
+                        <div class="playoff-info">
+                            <p><i class="far fa-calendar-alt"></i> May 22, 2025</p>
+                            <p><i class="far fa-clock"></i> 7:30 PM IST</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Narendra Modi Stadium, Ahmedabad</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Qualifier 2 -->
+                <div class="playoff-card">
+                    <h3>Qualifier 2</h3>
+                    <div class="playoff-match">
+                        <div class="playoff-teams">
+                            <div class="team">
+                                <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\csk.png" alt="CSK" class="team-logo">
+                                <span class="team-name">Chennai Super Kings</span>
+                            </div>
+                            <div class="team">
+                                <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\rcb.png" alt="RCB" class="team-logo">
+                                <span class="team-name">Royal Challengers Bangalore</span>
+                            </div>
+                        </div>
+                        <div class="playoff-info">
+                            <p><i class="far fa-calendar-alt"></i> May 24, 2025</p>
+                            <p><i class="far fa-clock"></i> 7:30 PM IST</p>
+                            <p><i class="fas fa-map-marker-alt"></i> MA Chidambaram Stadium, Chennai</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Final -->
+                <div class="playoff-card">
+                    <h3>Final</h3>
+                    <div class="playoff-match">
+                        <div class="playoff-teams">
+                            <div class="team">
+                                <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\srh.png" alt="SRH" class="team-logo">
+                                <span class="team-name">Sunrisers Hyderabad</span>
+                            </div>
+                            <div class="team">
+                                <img src="C:\Users\ravinder.thakur\Downloads\ipl2025\image\csk.png" alt="CSK" class="team-logo">
+                                <span class="team-name">Chennai Super Kings</span>
+                            </div>
+                        </div>
+                        <div class="playoff-info">
+                            <p><i class="far fa-calendar-alt"></i> May 26, 2025</p>
+                            <p><i class="far fa-clock"></i> 7:30 PM IST</p>
+                            <p><i class="fas fa-map-marker-alt"></i> MA Chidambaram Stadium, Chennai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Simulate live match data updates
+            function updateLiveMatch() {
+                const liveMatch = document.querySelector('.match-card.live .match-teams');
+                if (liveMatch) {
+                    const scores = liveMatch.querySelectorAll('.match-score');
+                    // Simulate score updates
+                    if (scores[0].textContent.includes("152/6")) {
+                        scores[0].textContent = "163/7 (19.1 overs)";
+                        scores[1].textContent = "178/4 (20 overs)";
+                        document.querySelector('.match-card.live .match-result').textContent = 
+                            "DC need 16 runs from 5 balls";
+                    } else if (scores[0].textContent.includes("163/7")) {
+                        scores[0].textContent = "172/9 (19.5 overs)";
+                        scores[1].textContent = "178/4 (20 overs)";
+                        document.querySelector('.match-card.live .match-result').textContent = 
+                            "DC need 7 runs from 1 ball";
+                    } else {
+                        scores[0].textContent = "175/10 (20 overs)";
+                        scores[1].textContent = "178/4 (20 overs)";
+                        document.querySelector('.match-card.live .match-result').textContent = 
+                            "PBKS won by 3 runs";
+                        document.querySelector('.match-card.live .match-status').innerHTML = 
+                            '<i class="fas fa-check-circle"></i> Completed';
+                        document.querySelector('.match-card.live').classList.remove('live');
+                        document.querySelector('.match-card.live').classList.add('completed');
+                    }
+                }
+            }
+            
+            // Update live match every 10 seconds
+            setInterval(updateLiveMatch, 10000);
+            
+            // Initialize with first tab active
+            tabs[0].click();
+        });
+    </script>
+</body>
+</html>
